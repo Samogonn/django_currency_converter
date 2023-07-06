@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'converter' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn secondary">Convert</button>
+
+    <h3>{{ amount }} {{ from_currency }} = {{ result }} </h3>
+</form>
+{% endblock content %}
